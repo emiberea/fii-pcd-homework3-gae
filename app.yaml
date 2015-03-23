@@ -1,0 +1,11 @@
+application: fii-pcd-homework3
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /user_guide
+  static_dir: user_guide
+
+- url: /.*
+  script: index.php
