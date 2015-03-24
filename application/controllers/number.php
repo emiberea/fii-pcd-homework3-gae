@@ -72,14 +72,16 @@ class Number extends CI_Controller {
             // get numbers from memcache
             $memcache = new Memcache;
             $resultStr = $memcache->get($user->getUserId());
-            $resultArr = unserialize($resultStr);
-            if ($resultArr) {
-                $average = array_sum($resultArr) / count($resultArr);
-            } else {
-                $average = 'Not present in cache.';
+            if ($resultStr) {
+                $resultArr = unserialize($resultStr);
+                if ($resultArr) {
+                    $average = array_sum($resultArr) / count($resultArr);
+                } else {
+                    $average = 'Not present in cache.';
+                }
+                $data['average'] = $average;
+                $data['number_array'] = $resultArr;
             }
-            $data['average'] = $average;
-            $data['number_array'] = $resultArr;
 
             $this->load->view('templates/header', $data);
             $this->load->view('number/average', $data);
