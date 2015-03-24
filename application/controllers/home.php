@@ -7,19 +7,34 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+        $data = array();
         $user = UserService::getCurrentUser();
         if (!$user) {
-            header('Location: ' . UserService::createLoginURL($_SERVER['REQUEST_URI']));
+            $data['logged_in'] = FALSE;
+            $data['username'] = 'Anonymous user';
+        } else {
+            $data['logged_in'] = TRUE;
+            $data['username'] = $user->getEmail();
         }
 
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('home/index');
 		$this->load->view('templates/footer');
 	}
 
     public function about()
     {
-        $this->load->view('templates/header');
+        $data = array();
+        $user = UserService::getCurrentUser();
+        if (!$user) {
+            $data['logged_in'] = FALSE;
+            $data['username'] = 'Anonymous user';
+        } else {
+            $data['logged_in'] = TRUE;
+            $data['username'] = $user->getEmail();
+        }
+
+        $this->load->view('templates/header', $data);
         $this->load->view('home/about');
         $this->load->view('templates/footer');
     }

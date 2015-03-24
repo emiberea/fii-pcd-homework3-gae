@@ -1,3 +1,4 @@
+    </div>
     <footer class="footer">
         <div class="container">
             <p class="text-muted">&copy;<?php echo date('Y');?> FII - PCD Homework3</p>
