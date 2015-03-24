@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>GAE - CD | PCD</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
 </head>
 
 <body>
