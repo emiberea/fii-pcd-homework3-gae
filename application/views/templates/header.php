@@ -38,6 +38,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo base_url(); ?>home">Home</a></li>
                         <li><a href="<?php echo base_url(); ?>number">Number</a></li>
+                        <li><a href="<?php echo base_url(); ?>number/average">Average</a></li>
                         <li><a href="<?php echo base_url(); ?>file">File</a></li>
                         <li><a href="<?php echo base_url(); ?>home/about">About</a></li>
                     </ul>

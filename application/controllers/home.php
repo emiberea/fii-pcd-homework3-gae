@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
         $data = array();
+
         $user = UserService::getCurrentUser();
         if (!$user) {
             $data['logged_in'] = FALSE;
@@ -25,6 +26,7 @@ class Home extends CI_Controller {
     public function about()
     {
         $data = array();
+
         $user = UserService::getCurrentUser();
         if (!$user) {
             $data['logged_in'] = FALSE;

@@ -10,6 +10,7 @@ class File extends CI_Controller {
 	public function index()
 	{
         $data = array();
+
         $user = UserService::getCurrentUser();
         if (!$user) {
             header('Location: ' . UserService::createLoginURL($_SERVER['REQUEST_URI']));
